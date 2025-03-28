@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dqx5vpoegq20x"]
+
+[ext_resource type="PackedScene" uid="uid://dsnigwmit41cj" path="res://assets/BeerBotle.glb" id="1_77unl"]
+[ext_resource type="Script" path="res://scripts/bottl_item.gd" id="1_ocxbu"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_0ddyb"]
+height = 3.3449
+radius = 0.60658
+
+[node name="bottle_item" type="RigidBody3D"]
+script = ExtResource("1_ocxbu")
+
+[node name="BeerBotle" parent="." instance=ExtResource("1_77unl")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.63351, 0)
+shape = SubResource("CylinderShape3D_0ddyb")

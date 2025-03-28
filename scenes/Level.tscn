@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://3qb33msyni8c" path="res://scenes/player.tscn" id="2_lgu72"]
 [ext_resource type="Script" path="res://scripts/Switch.gd.gd" id="2_s4are"]
 [ext_resource type="PackedScene" uid="uid://csmcgpqsvah64" path="res://scenes/win_cond.tscn" id="4_yfn7k"]
-[ext_resource type="PackedScene" uid="uid://dsnigwmit41cj" path="res://assets/BeerBotle.glb" id="5_txiyv"]
+[ext_resource type="PackedScene" uid="uid://dqx5vpoegq20x" path="res://scenes/bottl_item.tscn" id="5_lhg58"]
 
 [sub_resource type="StandardMaterial3D" id="3"]
 albedo_color = Color(0.498039, 0.498039, 0.498039, 1)
@@ -84,5 +84,8 @@ skeleton = NodePath("../..")
 [node name="Area3D" parent="." instance=ExtResource("4_yfn7k")]
 transform = Transform3D(0.343686, 0, 0, 0, 0.343686, 0, 0, 0, 0.343686, 11.7207, 0.166914, 9.90282)
 
-[node name="BeerBotle" parent="." instance=ExtResource("5_txiyv")]
-transform = Transform3D(0.458869, 0, 0, 0, 0.458869, 0, 0, 0, 0.458869, -8.56593, 0.10814, 14.4791)
+[node name="RigidBody3D" parent="." instance=ExtResource("5_lhg58")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.76526, 0, 12.9005)
+
+[node name="RigidBody3D2" parent="." instance=ExtResource("5_lhg58")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.5305, 0, 1.54572)
