@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://3qb33msyni8c"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_srr4q"]
+[ext_resource type="Script" path="res://scripts/look_interact.gd" id="2_iltwq"]
+[ext_resource type="PackedScene" uid="uid://dsnigwmit41cj" path="res://assets/BeerBotle.glb" id="3_a5b3f"]
+[ext_resource type="PackedScene" uid="uid://dbbw53jvxdnpj" path="res://assets/Smokehand.glb" id="4_kmtqo"]
+
+[sub_resource type="PlaceholderMesh" id="PlaceholderMesh_injwu"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_35dcf"]
+height = 1.10971
+
+[node name="Player" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.988356, 0)
+script = ExtResource("1_srr4q")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaceholderMesh_injwu")
+
+[node name="standing_collision_shape" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_35dcf")
+
+[node name="Head" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.481468, 0)
+
+[node name="RayCast3D" type="RayCast3D" parent="Head/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, -0.104709, -0.950129, 0, 1.85256, -0.0537027, 0, 0, 0)
+script = ExtResource("2_iltwq")
+
+[node name="Hand" type="Node3D" parent="Head/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1.35747, 0, 0, 0, 1, 0.403074, -0.634317, -0.82697)
+
+[node name="BeerBotle" parent="Head/Camera3D/Hand" instance=ExtResource("3_a5b3f")]
+transform = Transform3D(0.0892324, 0, 0, 0, 0.0892324, 0, 0, 0, 0.0892324, 0.258434, 0.0855278, 0.145678)
+
+[node name="Smokehand" parent="Head/Camera3D" instance=ExtResource("4_kmtqo")]
+transform = Transform3D(-0.393598, 0.0407144, 0.0517515, 0.0512391, 0.386366, 0.0857347, -0.0413575, 0.0912042, -0.386298, 0.618463, -3.06911, -1.12051)
+
+[node name="crouching_collision_shape" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.437889, 0)
+shape = SubResource("CapsuleShape3D_35dcf")

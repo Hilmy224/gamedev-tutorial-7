@@ -1,10 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://65h4c0mrp6k7"]
+[gd_scene load_steps=8 format=3 uid="uid://65h4c0mrp6k7"]
 
-[ext_resource type="PackedScene" uid="uid://bgexw7trrcfu" path="res://scenes/Box.tscn" id="1"]
-[ext_resource type="PackedScene" uid="uid://3qb33msyni8c" path="res://scenes/player.tscn" id="2_lgu72"]
-[ext_resource type="Script" path="res://scripts/Switch.gd.gd" id="2_s4are"]
-[ext_resource type="PackedScene" uid="uid://csmcgpqsvah64" path="res://scenes/win_cond.tscn" id="4_yfn7k"]
-[ext_resource type="PackedScene" uid="uid://dsnigwmit41cj" path="res://assets/BeerBotle.glb" id="5_txiyv"]
+[ext_resource type="PackedScene" path="res://Scenes/Box.tscn" id="1"]
 
 [sub_resource type="StandardMaterial3D" id="3"]
 albedo_color = Color(0.498039, 0.498039, 0.498039, 1)
@@ -16,13 +12,13 @@ size = Vector2(50, 50)
 [sub_resource type="BoxShape3D" id="2"]
 size = Vector3(50, 0, 50)
 
-[sub_resource type="BoxShape3D" id="5"]
-
 [sub_resource type="StandardMaterial3D" id="6"]
 albedo_color = Color(1, 0, 0, 1)
 
 [sub_resource type="BoxMesh" id="4"]
 material = SubResource("6")
+
+[sub_resource type="BoxShape3D" id="5"]
 
 [node name="Level" type="Node3D"]
 
@@ -66,23 +62,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.7144, 0.0330887)
 light_energy = 10.0
 omni_range = 50.0
 
-[node name="Player" parent="." instance=ExtResource("2_lgu72")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5753, 0)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
+[node name="Switch" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 25.0375)
-script = ExtResource("2_s4are")
-light = NodePath("../OmniLight3D")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-shape = SubResource("5")
-
-[node name="Switch" type="MeshInstance3D" parent="StaticBody3D"]
 mesh = SubResource("4")
-skeleton = NodePath("../..")
 
-[node name="Area3D" parent="." instance=ExtResource("4_yfn7k")]
-transform = Transform3D(0.343686, 0, 0, 0, 0.343686, 0, 0, 0, 0.343686, 11.7207, 0.166914, 9.90282)
+[node name="StaticBody3D" type="StaticBody3D" parent="Switch"]
 
-[node name="BeerBotle" parent="." instance=ExtResource("5_txiyv")]
-transform = Transform3D(0.458869, 0, 0, 0, 0.458869, 0, 0, 0, 0.458869, -8.56593, 0.10814, 14.4791)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Switch/StaticBody3D"]
+shape = SubResource("5")

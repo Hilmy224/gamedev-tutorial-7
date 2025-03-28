@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxkmwk6kovf3"
-path.s3tc="res://.godot/imported/Keanu.png-7f692693bdaddec840dd1d2f3405b609.s3tc.ctex"
+uid="uid://bu6pipna2vrfs"
+path.s3tc="res://.godot/imported/BeerBotle_Bottle.png-b69ca1ef74f833c801503557e5bfc269.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "81d8b440b499d9f5525d04f3018d176d"
+}
 
 [deps]
 
-source_file="res://assets/Keanu.png"
-dest_files=["res://.godot/imported/Keanu.png-7f692693bdaddec840dd1d2f3405b609.s3tc.ctex"]
+source_file="res://assets/BeerBotle_Bottle.png"
+dest_files=["res://.godot/imported/BeerBotle_Bottle.png-b69ca1ef74f833c801503557e5bfc269.s3tc.ctex"]
 
 [params]
 

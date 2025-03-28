@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxkmwk6kovf3"
-path.s3tc="res://.godot/imported/Keanu.png-7f692693bdaddec840dd1d2f3405b609.s3tc.ctex"
+uid="uid://bud3vogvy45ep"
+path.s3tc="res://.godot/imported/Smokehand_SmokeHand.png-721261bf0c74477f55558b41287c7803.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "a6d6a813069acb7587b0b57b127083a9"
+}
 
 [deps]
 
-source_file="res://assets/Keanu.png"
-dest_files=["res://.godot/imported/Keanu.png-7f692693bdaddec840dd1d2f3405b609.s3tc.ctex"]
+source_file="res://assets/Smokehand_SmokeHand.png"
+dest_files=["res://.godot/imported/Smokehand_SmokeHand.png-721261bf0c74477f55558b41287c7803.s3tc.ctex"]
 
 [params]
 

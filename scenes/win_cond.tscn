@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://csmcgpqsvah64"]
+
+[ext_resource type="Script" path="res://scripts/win_cond.gd" id="1_fjris"]
+[ext_resource type="PackedScene" uid="uid://by2uhrcxpec4q" path="res://assets/BirthdayCrown.fbx" id="1_wthxd"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7rcoa"]
+size = Vector3(4.07895, 2.71968, 3.80222)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7062q"]
+albedo_color = Color(1, 1, 0.101961, 1)
+
+[node name="Area3D" type="Area3D"]
+script = ExtResource("1_fjris")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(4.59516, 0, 0, 0, 4.59516, 0, 0, 0, 4.59516, -0.608809, 3.73032, 0.50803)
+shape = SubResource("BoxShape3D_7rcoa")
+
+[node name="BirthdayCrown" parent="." instance=ExtResource("1_wthxd")]
+
+[node name="Cube_001" parent="BirthdayCrown" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_7062q")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+
+[editable path="BirthdayCrown"]
